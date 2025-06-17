@@ -14,6 +14,9 @@ int main(int argc, char *argv[])
 
     QGuiApplication app(argc, argv);
 
+    app.setOrganizationName("Nota App");
+    app.setOrganizationDomain("maged.work0@gmail.com");
+
     QQmlApplicationEngine engine;
     QObject::connect(
         &engine,
