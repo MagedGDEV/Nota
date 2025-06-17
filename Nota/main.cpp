@@ -1,5 +1,7 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QQmlContext>
+#include <include/Driver.h>
 
 int main(int argc, char *argv[])
 {
@@ -24,7 +26,13 @@ int main(int argc, char *argv[])
         &app,
         []() { QCoreApplication::exit(-1); },
         Qt::QueuedConnection);
-    engine.loadFromModule("Nota", "Main");
 
+    // Add the C++ class into QML
+    Driver* driver = new Driver();
+    QQmlContext* rootContext = engine.rootContext();
+    rootContext->setContextProperty("Driver", driver);
+
+    engine.loadFromModule("Nota", "Main");
+    delete driver;
     return app.exec();
 }
