@@ -3,6 +3,15 @@
 
 int main(int argc, char *argv[])
 {
+
+
+
+    // Specifies the way of rendering
+    // To allow use of GammaRay
+    #ifdef __APPLE__
+        qputenv("QT_QUICK_BACKEND", "software");
+    #endif
+
     QGuiApplication app(argc, argv);
 
     QQmlApplicationEngine engine;
