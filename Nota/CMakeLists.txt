@@ -4,23 +4,43 @@ project(Nota VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 REQUIRED COMPONENTS Quick)
+find_package(Qt6 REQUIRED COMPONENTS Quick QuickControls2)
 
 qt_standard_project_setup(REQUIRES 6.5)
 
+
+
+
 qt_add_executable(appNota
     main.cpp
-
     src/Driver.cpp
 
     include/Driver.h
 )
 
+
+
+
 qt_add_qml_module(appNota
     URI Nota
     VERSION 1.0
+
+
+    RESOURCES
+        icons/logo.png
+        icons/svg/templates.svg
+        icons/svg/download.svg
+        icons/svg/trash.svg
+        icons/svg/hashtag.svg
+        icons/svg/development.svg
+        icons/svg/cup.svg
+        icons/svg/add.svg
+
     QML_FILES
         Main.qml
+        qml/SideBar.qml
+        qml/VerticalBarButton.qml
+
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
@@ -36,6 +56,7 @@ set_target_properties(appNota PROPERTIES
 
 target_link_libraries(appNota
     PRIVATE Qt6::Quick
+    Qt6::QuickControls2
 )
 
 include(GNUInstallDirs)

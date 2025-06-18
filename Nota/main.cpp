@@ -1,6 +1,7 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
+#include <QFont>
 #include <include/Driver.h>
 
 int main(int argc, char *argv[])
@@ -12,12 +13,17 @@ int main(int argc, char *argv[])
     // To allow use of GammaRay
     #ifdef __APPLE__
         qputenv("QT_QUICK_BACKEND", "software");
+\
     #endif
 
     QGuiApplication app(argc, argv);
 
     app.setOrganizationName("Nota App");
     app.setOrganizationDomain("maged.work0@gmail.com");
+
+
+    QFont defaultFont ("Ubuntu", 12);
+    app.setFont(defaultFont);
 
     QQmlApplicationEngine engine;
     QObject::connect(
@@ -33,6 +39,7 @@ int main(int argc, char *argv[])
     rootContext->setContextProperty("Driver", driver);
 
     engine.loadFromModule("Nota", "Main");
-    delete driver;
+
     return app.exec();
+    delete driver;
 }
