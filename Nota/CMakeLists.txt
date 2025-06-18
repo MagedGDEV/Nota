@@ -9,8 +9,6 @@ find_package(Qt6 REQUIRED COMPONENTS Quick QuickControls2)
 qt_standard_project_setup(REQUIRES 6.5)
 
 
-
-
 qt_add_executable(appNota
     main.cpp
     src/Driver.cpp
@@ -18,8 +16,7 @@ qt_add_executable(appNota
     include/Driver.h
 )
 
-
-
+set_source_files_properties(qml/Theme.qml PROPERTIES QT_QML_SINGLETON_TYPE TRUE)
 
 qt_add_qml_module(appNota
     URI Nota
@@ -40,6 +37,7 @@ qt_add_qml_module(appNota
         Main.qml
         qml/SideBar.qml
         qml/VerticalBarButton.qml
+        qml/Theme.qml
 
 )
 

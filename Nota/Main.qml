@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtCore
 
-import "./qml/"
+import Nota 1.0
 
 Window {
     id: window
@@ -47,5 +47,8 @@ Window {
             Layout.preferredWidth: parent.width * 0.5
             color: "#474e41"
         }
+    }
+    Component.onCompleted: {
+        console.log(Theme.text)
     }
 }
