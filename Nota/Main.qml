@@ -48,7 +48,4 @@ Window {
             color: "#474e41"
         }
     }
-    Component.onCompleted: {
-        console.log(Theme.text)
-    }
 }

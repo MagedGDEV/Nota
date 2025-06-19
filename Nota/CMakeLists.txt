@@ -4,7 +4,7 @@ project(Nota VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 REQUIRED COMPONENTS Quick QuickControls2)
+find_package(Qt6 REQUIRED COMPONENTS Quick QuickControls2 Sql)
 
 qt_standard_project_setup(REQUIRES 6.5)
 
@@ -32,6 +32,7 @@ qt_add_qml_module(appNota
         resources/icons/svg/development.svg
         resources/icons/svg/cup.svg
         resources/icons/svg/add.svg
+        resources/database/NotaDataBase.db
 
     QML_FILES
         Main.qml
@@ -54,6 +55,7 @@ set_target_properties(appNota PROPERTIES
 
 target_link_libraries(appNota
     PRIVATE Qt6::Quick
+    Qt6::Sql
     Qt6::QuickControls2
 )
 
