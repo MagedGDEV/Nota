@@ -2,7 +2,7 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <QFont>
-#include <include/Driver.h>
+#include <include/Client.h>
 
 int main(int argc, char *argv[])
 {
@@ -33,12 +33,12 @@ int main(int argc, char *argv[])
         Qt::QueuedConnection);
 
     // Add the C++ class into QML
-    Driver* driver = new Driver();
+    Client* client = new Client();
     QQmlContext* rootContext = engine.rootContext();
-    rootContext->setContextProperty("Driver", driver);
+    rootContext->setContextProperty("Client", client);
 
     engine.loadFromModule("Nota", "Main");
 
     return app.exec();
-    delete driver;
+    delete client;
 }

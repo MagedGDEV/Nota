@@ -11,9 +11,12 @@ qt_standard_project_setup(REQUIRES 6.5)
 
 qt_add_executable(appNota
     main.cpp
-    src/Driver.cpp
+    src/Server.cpp
+    src/Client.cpp
 
-    include/Driver.h
+
+    include/Server.h
+    include/Client.h
 )
 
 set_source_files_properties(resources/qml/Theme.qml PROPERTIES QT_QML_SINGLETON_TYPE TRUE)
@@ -21,7 +24,6 @@ set_source_files_properties(resources/qml/Theme.qml PROPERTIES QT_QML_SINGLETON_
 qt_add_qml_module(appNota
     URI Nota
     VERSION 1.0
-
 
     RESOURCES
         resources/icons/logo.png
@@ -39,8 +41,8 @@ qt_add_qml_module(appNota
         resources/qml/SideBar.qml
         resources/qml/VerticalBarButton.qml
         resources/qml/Theme.qml
-
 )
+
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an

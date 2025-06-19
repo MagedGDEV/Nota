@@ -1,13 +1,13 @@
 import QtQuick
 import QtQuick.Layouts
 
+import Nota
 
 Item {
 
     id: root
 
     property int _margins: 20
-
 
     implicitWidth: 100
     implicitHeight: 700
@@ -153,8 +153,11 @@ Item {
             leftMargin: 10
             rightMargin: 12
         }
-
         flat: true
+
+        onClicked: {
+            Client.addTable("New Goals")
+        }
     }
 
 }
