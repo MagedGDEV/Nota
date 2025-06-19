@@ -2,6 +2,8 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <QFont>
+#include <QIcon>
+
 #include <include/Client.h>
 
 int main(int argc, char *argv[])
@@ -19,7 +21,7 @@ int main(int argc, char *argv[])
 
     app.setOrganizationName("Nota App");
     app.setOrganizationDomain("maged.work0@gmail.com");
-
+    app.setWindowIcon(QIcon(":/icons/app-icon.png"));
 
     QFont defaultFont ("Ubuntu", 12);
     app.setFont(defaultFont);
