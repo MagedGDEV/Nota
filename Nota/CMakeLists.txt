@@ -16,7 +16,7 @@ qt_add_executable(appNota
     include/Driver.h
 )
 
-set_source_files_properties(qml/Theme.qml PROPERTIES QT_QML_SINGLETON_TYPE TRUE)
+set_source_files_properties(resources/qml/Theme.qml PROPERTIES QT_QML_SINGLETON_TYPE TRUE)
 
 qt_add_qml_module(appNota
     URI Nota
@@ -24,20 +24,20 @@ qt_add_qml_module(appNota
 
 
     RESOURCES
-        icons/logo.png
-        icons/svg/templates.svg
-        icons/svg/download.svg
-        icons/svg/trash.svg
-        icons/svg/hashtag.svg
-        icons/svg/development.svg
-        icons/svg/cup.svg
-        icons/svg/add.svg
+        resources/icons/logo.png
+        resources/icons/svg/templates.svg
+        resources/icons/svg/download.svg
+        resources/icons/svg/trash.svg
+        resources/icons/svg/hashtag.svg
+        resources/icons/svg/development.svg
+        resources/icons/svg/cup.svg
+        resources/icons/svg/add.svg
 
     QML_FILES
         Main.qml
-        qml/SideBar.qml
-        qml/VerticalBarButton.qml
-        qml/Theme.qml
+        resources/qml/SideBar.qml
+        resources/qml/VerticalBarButton.qml
+        resources/qml/Theme.qml
 
 )
 

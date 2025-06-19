@@ -13,7 +13,6 @@ int main(int argc, char *argv[])
     // To allow use of GammaRay
     #ifdef __APPLE__
         qputenv("QT_QUICK_BACKEND", "software");
-\
     #endif
 
     QGuiApplication app(argc, argv);

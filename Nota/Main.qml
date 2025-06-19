@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtCore
 
-import Nota 1.0
+import Nota
 
 Window {
     id: window

@@ -16,7 +16,7 @@ Item {
         id: logo
         width: 50
         height: 50
-        source: "../icons/logo.png"
+        source: "../../resources/icons/logo.png"
         fillMode: Image.PreserveAspectFit
 
         anchors {
@@ -44,7 +44,7 @@ Item {
             objectName: "templatesBtn"
             text: "Templates"
             icon {
-                source: "../icons/svg/templates.svg"
+                source: "../../resources/icons/svg/templates.svg"
                 width: 20
                 height: 20
             }
@@ -58,7 +58,7 @@ Item {
             objectName: "importBtn"
             text: "Import"
             icon {
-                source: "../icons/svg/download.svg"
+                source: "../../resources/icons/svg/download.svg"
                 width: 20
                 height: 20
             }
@@ -72,7 +72,7 @@ Item {
             objectName: "trashBtn"
             text: "Trash"
             icon {
-                source: "../icons/svg/trash.svg"
+                source: "../../resources/icons/svg/trash.svg"
                 width: 20
                 height: 20
             }
@@ -97,7 +97,7 @@ Item {
                 objectName: "tasksBtn"
                 text: "Tasks"
                 icon {
-                    source: "../icons/svg/hashtag.svg"
+                    source: "../../resources/icons/svg/hashtag.svg"
                     width: 20
                     height: 20
                 }
@@ -111,7 +111,7 @@ Item {
                 objectName: "developmentBtn"
                 text: "Development"
                 icon {
-                    source: "../icons/svg/development.svg"
+                    source: "../../resources/icons/svg/development.svg"
                     width: 20
                     height: 20
                 }
@@ -125,7 +125,7 @@ Item {
                 objectName: "achievementsBtn"
                 text: "Achievements"
                 icon {
-                    source: "../icons/svg/cup.svg"
+                    source: "../../resources/icons/svg/cup.svg"
                     width: 20
                     height: 20
                 }
@@ -141,7 +141,7 @@ Item {
         objectName: "newPageBtn"
         text: "New Page"
         icon {
-            source: "../icons/svg/add.svg"
+            source: "../../resources/icons/svg/add.svg"
             width: 20
             height: 20
         }
