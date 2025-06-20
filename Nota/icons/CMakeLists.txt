@@ -1,4 +1,4 @@
-qt_add_resources(appNota "icons"
+qt_add_resources(Nota "icons"
 	PREFIX /icons
 	FILES
 		# PNG

@@ -3,6 +3,7 @@
 #include <QQmlContext>
 #include <QFont>
 #include <QIcon>
+#include <QQuickStyle>
 
 #include <include/Client.h>
 
@@ -16,7 +17,7 @@ int main(int argc, char *argv[])
     #ifdef __APPLE__
         qputenv("QT_QUICK_BACKEND", "software");
     #endif
-
+    QQuickStyle::setStyle("Fusion");
     QGuiApplication app(argc, argv);
 
     app.setOrganizationName("Nota App");

@@ -15,7 +15,7 @@ T.Button {
 
     padding: 6
     contentItem: RowLayout {
-        spacing: 5
+        spacing: 8
         Image {
             id: _icon
             source: _control.icon.source
@@ -28,7 +28,7 @@ T.Button {
         Text {
             id: _contentText
             text: _control.text
-            color: "black"
+            color: Theme.primaryFontColor
             Layout.fillWidth: true
             Layout.alignment: Qt.AlignVCenter
         }
@@ -37,7 +37,7 @@ T.Button {
     background: Rectangle {
         implicitHeight: _contentText.height + 10
         radius: 4
-        color: _control.hovered ? "#eeeeee" : "transparent"
+        color: _control.hovered ? Theme.secondaryBackgroundColor : Theme.primaryBackgroundColor
     }
 
     MouseArea {

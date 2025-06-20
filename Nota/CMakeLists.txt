@@ -9,14 +9,14 @@ find_package(Qt6 REQUIRED COMPONENTS Quick QuickControls2 Sql)
 qt_standard_project_setup(REQUIRES 6.5)
 
 
-qt_add_executable(appNota
+qt_add_executable(Nota
     main.cpp
 
 )
 
-set_source_files_properties(resources/qml/Theme.qml PROPERTIES QT_QML_SINGLETON_TYPE TRUE)
+set_source_files_properties(qml/Theme.qml PROPERTIES QT_QML_SINGLETON_TYPE TRUE)
 
-qt_add_qml_module(appNota
+qt_add_qml_module(Nota
     URI Nota
     VERSION 1.0
 
@@ -32,11 +32,17 @@ qt_add_qml_module(appNota
         NotaDataBase.db
 
     QML_FILES
-        Main.qml
-        qml/SideBar.qml
+        # Components
         qml/VerticalBarButton.qml
         qml/Theme.qml
-        RESOURCES icons/CMakeLists.txt
+        # Pages
+        Main.qml
+        qml/SideBar.qml
+        qml/NotesPage.qml
+
+    IMPORTS
+        QtQuick.Controls
+        QtQuick.Layouts
 )
 
 add_subdirectory(icons)
@@ -45,7 +51,7 @@ add_subdirectory(icons)
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
 # explicit, fixed bundle identifier manually though.
-set_target_properties(appNota PROPERTIES
+set_target_properties(Nota PROPERTIES
 #    MACOSX_BUNDLE_GUI_IDENTIFIER com.example.appNota
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
@@ -53,14 +59,14 @@ set_target_properties(appNota PROPERTIES
     WIN32_EXECUTABLE TRUE
 )
 
-target_link_libraries(appNota
+target_link_libraries(Nota
     PRIVATE Qt6::Quick
-    Qt6::Sql
     Qt6::QuickControls2
+    Qt6::Sql
 )
 
 include(GNUInstallDirs)
-install(TARGETS appNota
+install(TARGETS Nota
     BUNDLE DESTINATION .
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}

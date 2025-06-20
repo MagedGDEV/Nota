@@ -45,8 +45,8 @@ Item {
             text: "Templates"
             icon {
                 source: "qrc:/icons/svg/duplicate.svg"
-                width: 20
-                height: 20
+                width: Theme.mediumIconSize
+                height: Theme.mediumIconSize
             }
             flat: true
         }
@@ -59,8 +59,8 @@ Item {
             text: "Import"
             icon {
                 source: "qrc:/icons/svg/download.svg"
-                width: 20
-                height: 20
+                width: Theme.mediumIconSize
+                height: Theme.mediumIconSize
             }
             flat: true
         }
@@ -73,8 +73,8 @@ Item {
             text: "Trash"
             icon {
                 source: "qrc:/icons/svg/trash.svg"
-                width: 20
-                height: 20
+                width: Theme.mediumIconSize
+                height: Theme.mediumIconSize
             }
             flat: true
         }
@@ -82,7 +82,7 @@ Item {
         Text {
             id: workspaceTxt
             text: "WORKSPACE"
-            color: "#808080"
+            color: Theme.secondaryFontColor
             padding: 20
             Layout.alignment: Qt.AlignHCenter
         }
@@ -98,8 +98,8 @@ Item {
                 text: "Tasks"
                 icon {
                     source: "qrc:/icons/svg/hastag.svg"
-                    width: 20
-                    height: 20
+                    width: Theme.mediumIconSize
+                    height: Theme.mediumIconSize
                 }
                 flat: true
             }
@@ -112,8 +112,8 @@ Item {
                 text: "Development"
                 icon {
                     source: "qrc:/icons/svg/square-terminal.svg"
-                    width: 20
-                    height: 20
+                    width: Theme.mediumIconSize
+                    height: Theme.mediumIconSize
                 }
                 flat: true
             }
@@ -126,8 +126,8 @@ Item {
                 text: "Achievements"
                 icon {
                     source: "qrc:/icons/svg/trophy.svg"
-                    width: 20
-                    height: 20
+                    width: Theme.mediumIconSize
+                    height: Theme.mediumIconSize
                 }
                 flat: true
             }
@@ -142,8 +142,8 @@ Item {
         text: "New Page"
         icon {
             source: "qrc:/icons/svg/add.svg"
-            width: 20
-            height: 20
+            width: Theme.mediumIconSize
+            height: Theme.mediumIconSize
         }
         anchors {
             bottom: root.bottom
