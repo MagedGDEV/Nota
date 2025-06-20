@@ -38,7 +38,7 @@ qt_add_qml_module(Nota
         # Pages
         Main.qml
         qml/SideBar.qml
-        qml/NotesPage.qml
+        qml/WorkspaceSection.qml
 
     IMPORTS
         QtQuick.Controls

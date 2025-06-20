@@ -51,12 +51,42 @@ Item {
                 }
             }
         }
-
-
         Rectangle {
-            color: "#f6761f"
+            Layout.fillWidth: true
+            Layout.preferredHeight: 50
+            Layout.topMargin: root._margin
+            Text {
+                text: "Workspace"
+                font {
+                    pixelSize: 28
+
+                }
+            }
+        }
+
+
+
+
+        ListView {
+            id: workspaceListView
             Layout.fillHeight: true
             Layout.fillWidth: true
+            clip: true
+            spacing: 5
+            model: 15
+
+            ScrollBar.vertical: ScrollBar {
+
+            }
+
+            delegate: Rectangle {
+                width: workspaceListView.width
+                height: 150
+                radius: 25
+                color: Theme.secondaryBackgroundColor
+            }
+
+
         }
 
 
@@ -64,3 +94,6 @@ Item {
 
 
 }
+
+
+

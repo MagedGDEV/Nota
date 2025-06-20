@@ -33,7 +33,7 @@ Window {
 
         }
 
-        NotesPage {
+        WorkspaceSection {
             id: notesSection
             objectName: "notesSection"
             Layout.preferredWidth: parent.width * 0.35
