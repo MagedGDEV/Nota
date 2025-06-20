@@ -72,15 +72,29 @@ Item {
             Layout.fillHeight: true
             Layout.fillWidth: true
             clip: true
-            spacing: 5
-            model: 15
+            spacing: 8
+            model: 20
 
-            ScrollBar.vertical: ScrollBar {
+            ScrollIndicator.vertical: ScrollIndicator {
+                contentItem: Rectangle {
+                    implicitWidth: 5
+                    implicitHeight: 75
+                    radius: width / 2
+                    color: Theme.accentColor
+                    opacity: parent.active ? 1 : 0
 
+                    Behavior on opacity {
+
+                        NumberAnimation {
+                            duration: 500
+                            easing.type: Easing.InOutExpo
+                        }
+                    }
+                }
             }
 
             delegate: Rectangle {
-                width: workspaceListView.width
+                width: workspaceListView.width - 15
                 height: 150
                 radius: 25
                 color: Theme.secondaryBackgroundColor

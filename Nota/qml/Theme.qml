@@ -4,6 +4,10 @@ import QtQuick
 
 QtObject {
 
+
+    // Main
+    readonly property color accentColor: "#F6761F"
+
     // Font
     readonly property string primaryFontFamily: "Ubuntu"
     readonly property color primaryFontColor: "black"
