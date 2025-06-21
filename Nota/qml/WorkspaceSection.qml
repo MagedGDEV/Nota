@@ -1,5 +1,5 @@
-import QtQuick 2.15
-import QtQuick.Controls 2.15
+import QtQuick
+import QtQuick.Controls
 import QtQuick.Layouts
 
 Item {
@@ -18,7 +18,7 @@ Item {
             Rectangle {
                 width: parent.width * 0.8
                 height: parent.height * 0.8
-                radius: width / 2
+                radius: height / 2
                 anchors.horizontalCenter: parent.horizontalCenter
 
                 border {

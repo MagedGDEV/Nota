@@ -36,15 +36,14 @@ Window {
         WorkspaceSection {
             id: notesSection
             objectName: "notesSection"
-            Layout.preferredWidth: parent.width * 0.35
+            Layout.preferredWidth: parent.width * 0.3
             Layout.fillHeight: true
         }
-        Rectangle {
+        MarkdownSection {
             id: goalsSection
             objectName: "goalsSection"
             Layout.fillHeight: true
-            Layout.preferredWidth: parent.width * 0.5
-            color: "#474e41"
+            Layout.fillWidth: true
         }
     }
 }
