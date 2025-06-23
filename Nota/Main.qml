@@ -2,8 +2,6 @@ import QtQuick
 import QtQuick.Layouts
 import QtCore
 
-import Nota
-
 Window {
     id: window
     width: 640

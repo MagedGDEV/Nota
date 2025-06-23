@@ -1,6 +1,11 @@
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
+
+
+
 
 Item {
     id: root
@@ -76,12 +81,13 @@ Item {
             model: 20
 
             ScrollIndicator.vertical: ScrollIndicator {
+                id: scrollIndicator
                 contentItem: Rectangle {
                     implicitWidth: 5
                     implicitHeight: 75
                     radius: width / 2
                     color: Theme.accentColor
-                    opacity: parent.active ? 1 : 0
+                    opacity: scrollIndicator.active ? 1 : 0
 
                     Behavior on opacity {
 
@@ -99,14 +105,8 @@ Item {
                 radius: 25
                 color: Theme.secondaryBackgroundColor
             }
-
-
         }
-
-
     }
-
-
 }
 
 

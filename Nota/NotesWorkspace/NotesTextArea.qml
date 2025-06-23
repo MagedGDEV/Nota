@@ -1,13 +1,14 @@
 import QtQuick
 import QtQuick.Controls
-
 import Nota
-
-
 
 Rectangle {
     id: notesTextAreaContainer0
-    height: notesTextArea.focus ? notesTextAreaContainer1.height + 45 + 5: notesTextAreaContainer1.height
+
+    property bool checkBoxEnabled: false
+
+    height: checkBoxEnabled ? notesTextCheckBoxContainer.height :
+        (notesTextArea.focus ? notesTextAreaContainer1.height + 45 + 5: notesTextAreaContainer1.height)
     color: Theme.primaryBackgroundColor
     Behavior on height {
         NumberAnimation {
@@ -16,22 +17,24 @@ Rectangle {
         }
     }
 
+    Flow {
+        id: notesTextCheckBoxContainer
+        width: parent.width - 10
+    }
+
     Rectangle {
-
-
         id: notesTextAreaContainer1
-        width: parent.width
+        width: parent.width - 10
         height: notesTextArea.implicitHeight
-        color:  notesTextArea.focus ? Theme.secondaryBackgroundColor : Theme.primaryBackgroundColor
-
+        color: (notesTextArea.focus || mouse.containsMouse) ? Theme.secondaryBackgroundColor : Theme.primaryBackgroundColor
+        radius: 5
         anchors {
             bottom: parent.bottom
         }
-
         TextArea {
             id: notesTextArea
             anchors.fill: parent
-
+            wrapMode: TextEdit.Wrap
             placeholderText: "Markdown Text Area"
             placeholderTextColor: Theme.secondaryFontColor
             color: Theme.primaryFontColor
@@ -56,6 +59,13 @@ Rectangle {
             }
         }
 
+        MouseArea {
+            id: mouse
+            anchors.fill: parent
+            hoverEnabled: true
+            onClicked: notesTextArea.forceActiveFocus()
+            cursorShape: mouse.containsMouse ? Qt.IBeamCursor : Qt.ArrowCursor
+        }
     }
 }
 

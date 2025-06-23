@@ -1,0 +1,6 @@
+NotesTextArea 1.0 NotesTextArea.qml
+NotesToolBar 1.0 NotesToolBar.qml
+NotesToolBarButton 1.0 NotesToolBarButton.qml
+NotesCheckBox 1.0 NotesCheckBox.qml
+NotesCheckView 1.0 NotesCheckView.qml
+NotesCheckToolBar 1.0 NotesCheckToolBar.qml

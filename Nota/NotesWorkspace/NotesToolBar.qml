@@ -1,16 +1,14 @@
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Layouts
-import QtQuick.Controls
 
 import Nota
 
 Rectangle {
-
-
+    id: notesToolBar
     property int buttonSize: 20
-
-
-    width: 185
+    width: 215
     radius: 10
     color: Theme.primaryBackgroundColor
 
@@ -38,8 +36,8 @@ Rectangle {
         anchors.margins: 6
         NotesToolBarButton {
             id: bold
-            Layout.preferredHeight: buttonSize
-            Layout.preferredWidth: buttonSize
+            implicitHeight: notesToolBar.height - 12
+            Layout.preferredWidth: notesToolBar.buttonSize
             icon.source: "qrc:/icons/svg/bold.svg"
             onClicked: {
                 on = !on
@@ -54,8 +52,8 @@ Rectangle {
 
         NotesToolBarButton {
             id: italic
-            Layout.preferredHeight: buttonSize
-            Layout.preferredWidth: buttonSize
+            implicitHeight: notesToolBar.height - 12
+            Layout.preferredWidth: notesToolBar.buttonSize
             icon.source: "qrc:/icons/svg/italic.svg"
             onClicked: {
                 on = !on
@@ -70,8 +68,8 @@ Rectangle {
 
         NotesToolBarButton {
             id: underline
-            Layout.preferredHeight: buttonSize
-            Layout.preferredWidth: buttonSize
+            implicitHeight: notesToolBar.height - 12
+            Layout.preferredWidth: notesToolBar.buttonSize
             icon.source: "qrc:/icons/svg/underline.svg"
             onClicked: {
                 on = !on
@@ -86,10 +84,11 @@ Rectangle {
 
         NotesToolBarButton {
             id: increaseSize
-            Layout.preferredHeight: buttonSize
-            Layout.preferredWidth: buttonSize
+            implicitHeight: notesToolBar.height - 12
+            Layout.preferredWidth: notesToolBar.buttonSize
             icon.source: "qrc:/icons/svg/caret-up.svg"
             onClicked: {
+                if (notesTextArea.font.pixelSize < 32)
                 notesTextArea.font.pixelSize++
             }
         }
@@ -98,11 +97,33 @@ Rectangle {
 
         NotesToolBarButton {
             id: decreaseSize
-            Layout.preferredHeight: buttonSize
-            Layout.preferredWidth: buttonSize
+            implicitHeight: notesToolBar.height - 12
+            Layout.preferredWidth: notesToolBar.buttonSize
             icon.source: "qrc:/icons/svg/caret-down.svg"
             onClicked: {
-                notesTextArea.font.pixelSize--
+                if (notesTextArea.font.pixelSize > 8)
+                    notesTextArea.font.pixelSize--
+            }
+        }
+
+        Item {Layout.fillWidth: true}
+
+        NotesToolBarButton {
+            id: checkbox
+            implicitHeight: notesToolBar.height - 12
+            Layout.preferredWidth: notesToolBar.buttonSize
+            icon.source: "qrc:/icons/svg/checkbox.svg"
+            onClicked: {
+                if (notesTextArea.text !== ""){
+                    let lines = notesTextArea.text.split("\n")
+                    notesTextAreaContainer1.visible = false
+                    notesTextAreaContainer0.checkBoxEnabled = true
+                    let checkView = checkBoxComponent.createObject(notesTextCheckBoxContainer, {
+                        "width": notesTextCheckBoxContainer.width,
+                        "lines": lines,
+                        "pixelSize": notesTextArea.font.pixelSize
+                    })
+                }
             }
         }
 
@@ -110,12 +131,17 @@ Rectangle {
 
         NotesToolBarButton {
             id: deleteBtn
-            Layout.preferredHeight: buttonSize
-            Layout.preferredWidth: buttonSize
+            implicitHeight: notesToolBar.height - 12
+            Layout.preferredWidth: notesToolBar.buttonSize
             icon.source: "qrc:/icons/svg/trash.svg"
             onClicked: {
                 notesTextAreaContainer0.destroy()
             }
         }
+    }
+
+    Component {
+        id: checkBoxComponent
+        NotesCheckView {}
     }
 }

@@ -1,12 +1,12 @@
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Layouts
 
-import Nota
 
 Item {
 
     id: root
-
     property int _margins: 20
 
     implicitWidth: 100
