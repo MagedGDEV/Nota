@@ -92,18 +92,19 @@ Item {
                     Behavior on opacity {
 
                         NumberAnimation {
-                            duration: 500
-                            easing.type: Easing.InOutExpo
+                            duration: Theme.animationDuration
+                            easing.type: Easing.Linear
                         }
                     }
                 }
             }
 
-            delegate: Rectangle {
-                width: workspaceListView.width - 15
-                height: 150
+            delegate:  Rectangle {
                 radius: 25
                 color: Theme.secondaryBackgroundColor
+                width: workspaceListView.width - 15
+                height: 150
+
             }
         }
     }

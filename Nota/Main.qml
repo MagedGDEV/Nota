@@ -36,12 +36,14 @@ Window {
             objectName: "notesSection"
             Layout.preferredWidth: parent.width * 0.3
             Layout.fillHeight: true
+            Layout.bottomMargin: 5
         }
         MarkdownSection {
             id: goalsSection
             objectName: "goalsSection"
             Layout.fillHeight: true
             Layout.fillWidth: true
+            Layout.bottomMargin: 5
         }
     }
 }

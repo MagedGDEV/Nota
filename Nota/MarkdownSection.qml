@@ -30,16 +30,16 @@ Item {
             Layout.alignment: Qt.AlignHCenter
         }
         ScrollView {
+            id: notesView
             Layout.fillHeight: true
             Layout.fillWidth: true
-            Item {
-                anchors.fill: parent
-                Flow {
-                    id: notesList
-                    anchors.fill: parent
-                    clip: true
-                }
+
+            Flow {
+                id: notesList
+                clip: true
+                width: notesView.width
             }
+
             ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
             ScrollBar.vertical: ScrollBar {
 
@@ -69,8 +69,8 @@ Item {
                     Behavior on opacity {
 
                         NumberAnimation {
-                            duration: 500
-                            easing.type: Easing.InOutExpo
+                            duration: Theme.animationDuration
+                            easing.type: Easing.Linear
                         }
                     }
                 }
@@ -80,12 +80,10 @@ Item {
 
     RoundButton {
         id: addNote
-        z:1
         anchors {
             bottom: root.bottom
             right: root.right
-            bottomMargin: 20
-            rightMargin: 20
+            margins: root._margin
         }
 
         icon.width: 28
@@ -97,7 +95,7 @@ Item {
             radius: width / 2
             anchors.fill: parent
             color: Theme.accentColor
-            opacity: mouse.containsMouse ? 0.8 : 0.6
+            opacity: mouse.containsMouse ? Theme.addPageOpacityActive: Theme.addPageOpacityInactive
             MouseArea {
                 id: mouse
                 anchors.fill: parent

@@ -12,13 +12,13 @@ Button {
 
     Behavior on height {
         NumberAnimation {
-            duration: 500
+            duration: Theme.animationDuration
             easing.type: Easing.Linear
         }
     }
 
-    icon.width: 10
-    icon.height: 10
+    icon.width: Theme.markupButtonIconSize
+    icon.height: Theme.markupButtonIconSize
     icon.color: on ? Theme.accentColor : Theme.primaryFontColor
     background: Rectangle {
         radius: 5

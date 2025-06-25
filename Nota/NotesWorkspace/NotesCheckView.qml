@@ -3,9 +3,11 @@ import QtQuick
 Rectangle {
     id: notesCheckView
 
-    height: notesCheckViewList.height
     required property var lines
     required property int pixelSize
+
+    height: notesCheckViewList.height
+
     Behavior on height {
         NumberAnimation {
             duration: 500
@@ -22,7 +24,6 @@ Rectangle {
     NotesCheckToolBar {
         z: 1
         height: 32
-        opacity:  1
         anchors {
             top: notesCheckViewList.top
             right: notesCheckViewList.right
@@ -30,7 +31,6 @@ Rectangle {
             rightMargin: 5
         }
     }
-
 
     Component.onCompleted: {
         for (let i = 0; i < lines.length; i++){

@@ -14,7 +14,7 @@ Rectangle {
 
     Behavior on height {
         NumberAnimation {
-            duration: 500
+            duration: Theme.animationDuration
             easing.type: Easing.Linear
         }
     }
@@ -22,7 +22,7 @@ Rectangle {
     Behavior on opacity {
 
         NumberAnimation {
-            duration: 500
+            duration: Theme.animationDuration
             easing.type: Easing.Linear
         }
     }
@@ -119,7 +119,7 @@ Rectangle {
                     notesTextAreaContainer1.visible = false
                     notesTextAreaContainer0.checkBoxEnabled = true
                     let checkView = checkBoxComponent.createObject(notesTextCheckBoxContainer, {
-                        "width": notesTextCheckBoxContainer.width,
+                        "width": Qt.binding(() => notesTextCheckBoxContainer.width),
                         "lines": lines,
                         "pixelSize": notesTextArea.font.pixelSize
                     })

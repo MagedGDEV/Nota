@@ -12,13 +12,6 @@ Rectangle {
     radius: 10
     color: Theme.primaryBackgroundColor
 
-    Behavior on height {
-        NumberAnimation {
-            duration: 500
-            easing.type: Easing.Linear
-        }
-    }
-
     Behavior on opacity {
 
         NumberAnimation {
@@ -34,6 +27,15 @@ Rectangle {
     RowLayout {
         anchors.fill: parent
         anchors.margins: 6
+
+
+        Behavior on opacity {
+            NumberAnimation {
+                duration: 500
+                easing.type: Easing.Linear
+            }
+        }
+
         NotesToolBarButton {
             id: editBtn
             implicitHeight: notesToolBar.height - 12

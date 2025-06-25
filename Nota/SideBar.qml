@@ -8,14 +8,15 @@ Item {
 
     id: root
     property int _margins: 20
-
+    property int _leftMargin: 10
+    property int _rightMargin: 12
     implicitWidth: 100
     implicitHeight: 700
 
     Image {
         id: logo
-        width: 50
-        height: 50
+        width: Theme.logoSize
+        height: Theme.logoSize
         source: "qrc:/icons/logo.png"
         fillMode: Image.PreserveAspectFit
 
@@ -33,8 +34,8 @@ Item {
             left: parent.left
             right: parent.right
             topMargin: root._margins
-            leftMargin: 10
-            rightMargin: 12
+            leftMargin: root._leftMargin
+            rightMargin: root._rightMargin
         }
 
         VerticalBarButton {
@@ -150,8 +151,8 @@ Item {
             left: root.left
             right: root.right
             bottomMargin: root._margins
-            leftMargin: 10
-            rightMargin: 12
+            leftMargin: root._leftMargin
+            rightMargin: root._rightMargin
         }
         flat: true
 
